@@ -15,7 +15,7 @@ Test GetCode Endpoint
     Create Session    api    ${BASE_URL}
     ${resp}=    GET On Session    api    /getcode
     Should Be Equal As Strings    ${resp.status_code}    200
-    Should Be Equal As Strings    ${resp.json()["message"]}    hello few
+    Should Be Equal As Strings    ${resp.json()["message"]}    hello link
 
 Test Plus Endpoint
     Create Session    api    ${BASE_URL}
