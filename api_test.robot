@@ -22,3 +22,21 @@ Test Plus Endpoint
     ${resp}=    GET On Session    api    /plus/5/6
     Should Be Equal As Strings    ${resp.status_code}    200
     Should Be Equal As Integers   ${resp.json()["sum"]}    11
+
+Test_x_is_3dot7
+    Create Session    api    ${BASE_URL}
+    ${resp}=    GET On Session    api    /is2hornor/3.7
+    Should Be Equal As Strings    ${resp.status_code}    200
+    Should not Be True   ${resp.json()["gpax"]}    
+
+Test_x_is_3dot4
+    Create Session    api    ${BASE_URL}
+    ${resp}=    GET On Session    api    /is2hornor/3.4
+    Should Be Equal As Strings    ${resp.status_code}    200
+    Should Be True   ${resp.json()["gpax"]}    
+
+Test_x_is_3dot1
+    Create Session    api    ${BASE_URL}
+    ${resp}=    GET On Session    api    /is2hornor/3.1
+    Should Be Equal As Strings    ${resp.status_code}    200
+    Should not Be True   ${resp.json()["gpax"]}    
